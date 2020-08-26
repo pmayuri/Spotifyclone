@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom'
 
 
 const Playlists = (props) => {
+console.log(props.limiter)
+
     const dataPlaylists = [
         {
             id: 101,

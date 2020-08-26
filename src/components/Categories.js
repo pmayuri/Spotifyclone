@@ -1,55 +1,63 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Playlists from './Playlists'
 
 const Categories = () => {
+  const [limiter, setLimiter] = useState(0)
+  const mainInnerRef = useRef()
+  const dataCategories = [
+    {
+      id: 1,
+      name: 'Focus',
+      tagline: 'Music to help you concentrate',
+    },
+    {
+      id: 2,
+      name: 'Mood',
+      tagline: 'Playlists to match your mood',
+    },
+    {
+      id: 3,
+      name: 'Soundtrack your home',
+      tagline: '',
+    },
+    {
+      id: 4,
+      name: 'Kick back this Sunday...',
+    },
+  ]
 
-    const dataCategories = [
-        {
-            id: 1,
-            name: 'Charts',
-tagline: ''
-        },
-        {
-            id: 2,
-            name: 'Focus',
-            tagline: 'Music to help you concentrate.'
+  useEffect(() => {
+    // function
+    const handleWindowResize = () => {
+      // calculation
+      const calculation = Math.floor(
+        mainInnerRef.current.getBoundingClientRect().width / 195
+      )
 
-        },
-        {
-            id: 3,
-            name: 'Mood',
-            tagline: 'Playlists to match your mood.'
+      setLimiter(calculation)
+    }
 
-        },
-        {
-            id: 4,
-            name: 'Popular new releases',
-            tagline: ''
+    handleWindowResize()
 
-        },
-    ]
+    // assign event listener
+    window.addEventListener('resize', handleWindowResize)
 
+    // remove event listener
+    return () => window.removeEventListener('resize', handleWindowResize)
+  }, [])
 
-
-    return (
-        <div className="mainInner">
-            
-                {dataCategories.map((category,id) => (
-                    <div className="cardsWrap" key={id}>
-                        <h2>{category.name}</h2>
-                     {/*   <span className="seeAll ">SEE ALL</span> */}
-                <p className="subtext">{category.tagline}</p>
-                        <Playlists category_id={category.id} />
-
-                    </div>
-
-                ))}
-
-
-
-
+  return (
+    <div className="mainInner" ref={mainInnerRef}>
+      {dataCategories.map((category, id) => (
+        <div className="cardsWrap" key={id}>
+          <h2>{category.name}</h2>
+          {/* <span className="seeAll">SEE ALL</span> */}
+          <p className="subText">{category.tagline}</p>
+          <Playlists category_id={category.id} limiter={limiter} />
         </div>
-    )
+      ))}
+    </div>
+  )
 }
 
 export default Categories
