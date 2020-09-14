@@ -5,6 +5,17 @@ $greyText: #b3b3b3;
 $greyNav: #090909;
 $greenMain: #1db954;
 
+@font-face {
+  font-family: circular-book;
+  src:url(./fonts/CircularStd-Book.otf);
+}
+
+@font-face {
+  font-family: circular-bold;
+  src:url(./fonts/CircularStd-Bold.otf);
+}
+
+
 
 .uppercase {
   text-transform: uppercase;
@@ -84,7 +95,7 @@ body {
       }
     &.active {
         background: $greyLighter;
-        color: white;
+       
         svg {
           fill: white;
         }
@@ -95,6 +106,17 @@ body {
     }
   }
 }
+
+.sidebar {
+
+color: white;
+padding: 5px;
+font-size: 14px;
+margin-left: 10px;
+}
+
+
+
 .cookies {
   font-size: 0.6rem;
   color: $greyText;
@@ -140,6 +162,40 @@ top:0;
 z-index: 2;
 
 }
+
+.login {
+  display: inline-block;
+  line-height: 18px;
+  background-color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  border: 2px solid transparent;
+    padding-top: 8px;
+    padding-right: 34px;
+    padding-bottom: 8px;
+    padding-left: 34px;
+border-radius: 500px;
+cursor: pointer;
+margin-left: 3rem;
+
+
+}
+.sign {
+  letter-spacing: 1.76px;
+font-size: 10px;
+background-color: rgba(9, 9, 9, 0.959);
+font-weight: 700;
+color: white;
+text-decoration: none;
+cursor: pointer;
+border:none;
+margin-left: 80rem;
+}
+
+
+
+
 
 .main {
   width: 100%;
@@ -275,7 +331,7 @@ display: flex;
 }
 .playlistPageSongs {
 height: 100%;
-.playliatButtons {
+.playlistButtons {
   display: flex;
   align-items: center;
 }
@@ -297,10 +353,12 @@ height: 100%;
 .icons {
   .icon {
     margin-left: 0.5rem;
+    
   }
   .iconsHeart {
     width: 28px;
 height: 28px;
+
 svg {
   fill:white;
 }

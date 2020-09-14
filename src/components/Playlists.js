@@ -58,6 +58,28 @@ console.log(props.limiter)
             img:'https://images.unsplash.com/photo-1598158125189-99ce6c374757?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
             des:'Lorem ipsum'
         },
+        {
+            id: 101,
+            category_id: 2,
+            name: 'Mood playlist 2  ',
+            img:'https://images.unsplash.com/photo-1598158125189-99ce6c374757?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+            des:'Lorem ipsum'
+        },
+        {
+            id: 107,
+            category_id: 2,
+            name: 'Mood playlist 2  ',
+            img:'https://images.unsplash.com/photo-1598158125189-99ce6c374757?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+            des:'Lorem ipsum'
+        },
+        {
+            id: 104,
+            category_id: 1,
+            name: 'Focus playlist 1 ',
+            img:'https://images.unsplash.com/photo-1598146898849-5c7c93975a9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+            des:'Lorem ipsum'
+        },
+
     ]
     const matchedPlaylists = dataPlaylists.filter(
        ( playlist) => playlist.category_id === props.category_id

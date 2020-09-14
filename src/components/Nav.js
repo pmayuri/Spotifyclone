@@ -17,22 +17,23 @@ const Nav = () => {
       </div>
       <ul>
         <Link to="/">
-        <li className="active">
-          <HomeIcon />
+          <li className="active">
+            <HomeIcon />
            Home
            </li>
-           </Link>
-           <Link to="/search">
-
-        <li>
-          <SearchIcon /> search
+        </Link>
+        <Link to="/search">
+          <li><SearchIcon /> search
            </li>
-           </Link>
-           <Link to="/your-library">
+        </Link>
+        <Link to="/your-library">
 
-        <li><LibraryIcon /> Your Library
+          <li><LibraryIcon /> Your Library
          </li>
-         </Link>
+        </Link>
+
+        <br />
+        <strong className="sidebar">PLAYLIST</strong>
       </ul>
       <div className="cookies">
         <span>cookies</span>

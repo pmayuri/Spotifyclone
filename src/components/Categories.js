@@ -24,6 +24,7 @@ const Categories = () => {
       id: 4,
       name: 'Kick back this Sunday...',
     },
+    
   ]
 
   useEffect(() => {
